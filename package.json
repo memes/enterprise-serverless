@@ -1,0 +1,60 @@
+{
+  "name": "enterprise-serverless",
+  "version": "1.0.0",
+  "description": "Enterprise-grade serverless on GCP example",
+  "keywords": [
+    "gcp",
+    "serverless",
+    "oauth"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "npm run test",
+    "build": "tsc -p tsconfig.json",
+    "lint": "tslint -p tsconfig.json",
+    "pretest": "npm run lint",
+    "test": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memes/enterprise-serverless.git"
+  },
+  "author": {
+    "name": "Matthew Emes",
+    "email": "memes@matthewemes.com",
+    "url": "https://matthewemes.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/memes/enterprise-serverless/issues"
+  },
+  "homepage": "https://matthewemes.com/2018/05/is-gcp-serverless-enterprise-ready-part-1/",
+  "devDependencies": {
+    "@types/mocha": "^5.2.0",
+    "@types/sinon": "^4.3.3",
+    "mocha": "^5.1.1",
+    "nyc": "^11.8.0",
+    "should": "^13.2.1",
+    "sinon": "^5.0.7",
+    "source-map-support": "^0.5.6",
+    "ts-node": "^6.0.3",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "**/*.spec.ts",
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "text"
+    ],
+    "all": true
+  }
+}
