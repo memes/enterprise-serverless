@@ -11,9 +11,10 @@
   "scripts": {
     "prebuild": "npm run test",
     "build": "tsc -p tsconfig.json",
+    "clean": "rimraf dist",
     "lint": "tslint -p tsconfig.json",
     "pretest": "npm run lint",
-    "test": "nyc mocha"
+    "test": "cross-env NODE_ENV=test nyc mocha"
   },
   "repository": {
     "type": "git",
@@ -29,16 +30,24 @@
     "url": "https://github.com/memes/enterprise-serverless/issues"
   },
   "homepage": "https://matthewemes.com/2018/05/is-gcp-serverless-enterprise-ready-part-1/",
+  "dependencies": {
+    "winston": "^3.0.0-rc5"
+  },
   "devDependencies": {
+    "@types/express": "^4.11.1",
     "@types/mocha": "^5.2.0",
+    "@types/node": "^10.1.2",
     "@types/sinon": "^4.3.3",
+    "cross-env": "^5.1.5",
     "mocha": "^5.1.1",
     "nyc": "^11.8.0",
+    "rimraf": "^2.6.2",
     "should": "^13.2.1",
     "sinon": "^5.0.7",
     "source-map-support": "^0.5.6",
     "ts-node": "^6.0.3",
     "tslint": "^5.10.0",
+    "typemoq": "^2.1.0",
     "typescript": "^2.8.3"
   },
   "nyc": {
